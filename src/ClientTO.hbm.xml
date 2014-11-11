@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="crm.to.ClientTO" table="client">
+      <meta attribute="class-description">
+         This class contains the employee detail. 
+      </meta>
+     <id name="client_id" type="int" column="client_id">
+         <generator class="native"/>
+      </id>
+      <property name="client_name" column="client_name" type="string"/>
+      <property name="client_add" column="client_address" type="string"/>
+      <property name="client_phn" column="client_phn" type="string"/>
+      <property name="client_site_add" column="client_site_add" type="string"/>
+      <property name="guaranter_name" column="guaranter_name " type="string"/>
+      <property name="guaranter_phn" column="guaranter_phn" type="string"/>
+   </class>
+</hibernate-mapping>

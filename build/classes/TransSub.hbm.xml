@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="crm.to.TransSub" table="sub_transaction">
+      <meta attribute="class-description">
+         This class contains the employee detail. 
+      </meta>
+      <id name="content_id" type="int" column="content_id">
+         <generator class="native"/>
+      </id>
+      <property name="cost" column="cost" type="float"/>
+      <property name="quantity" column="quantity" type="int"/>
+      <property name="transaction_id" column="transaction_id" type="int"/>
+      <property name="provider_id" column="provider_id" type="int"/>
+      <property name="prevalloc" column="prevalloc " type="int"/>
+      <property name="newalloc" column="newalloc" type="int"/>
+      <property name="submitted" column="submitted" type="int"/>
+      <property name="rate" column="rate" type="float"/>
+      <property name="plate_id" column="plate_id" type="int"/>
+   </class>
+</hibernate-mapping>

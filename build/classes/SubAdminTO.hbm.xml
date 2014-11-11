@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="crm.to.SubAdminTO" table="userinfo">
+      <meta attribute="class-description">
+         This class contains the employee detail. 
+      </meta>
+      <id name="SubadminId" type="int" column="id">
+         <generator class="identity"/>
+      </id>
+      <property name="SubadminName" column="User_Name" type="string"/>
+      <property name="SubadminAdd" column="User_Add" type="string"/>
+      <property name="OfficeId" column="Office_Id" type="int"/>
+      <property name="SubadminPhn" column="User_Phn" type="string"/>
+      <property name="Delete_Status" column="Delete_Status" type="int"/>
+      
+   </class>
+</hibernate-mapping>

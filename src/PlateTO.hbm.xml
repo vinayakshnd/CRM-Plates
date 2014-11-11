@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="crm.to.PlateTO" table="plate_info">
+      <meta attribute="class-description">
+         This class contains the employee detail. 
+      </meta>
+      <id name="Plate_Id" type="int" column="Plate_Id">
+         <generator class="identity"/>
+      </id>
+      <property name="Size" column="Size" type="string"/>
+      <property name="Total_Plate" column="Total" type="int"/>
+      <property name="Available_Plate" column="Available" type="int"/>
+      <property name="Rate_Per_Plate" column="RatePerPlate" type="float"/>
+   </class>
+</hibernate-mapping>

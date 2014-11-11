@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name="crm.to.TransMaster" table="transaction">
+      <meta attribute="class-description">
+         This class contains the employee detail. 
+      </meta>
+      <id name="transaction_id" type="int" column="	transaction_id">
+         <generator class="native"/>
+      </id>
+      <property name="subadmin_id" column="subadmin_id" type="int"/>
+      <property name="client_id" column="client_id" type="int"/>
+      <property name="date" column="opening_date" type="string"/>
+      <property name="closingDate" column="closing_date" type="string"/>
+      <property name="advance" column="advance_amount " type="float"/>
+      <property name="total_amount" column="total_amount" type="float"/>
+      <property name="remaining_amount" column="remaining_amount" type="float"/>
+      <property name="isOpen" column="open" type="int"/>
+   </class>
+</hibernate-mapping>
