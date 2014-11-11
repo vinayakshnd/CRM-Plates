@@ -19,14 +19,14 @@ public class TransMaster {
 		this.client_id = client_id;
 	}
 
-	private String date;
-	private String closingDate;
+	private Date date;
+	private Date closingDate;
 	
-	public String getClosingDate() {
+	public Date getClosingDate() {
 		return closingDate;
 	}
 
-	public void setClosingDate(String closingDate) {
+	public void setClosingDate(Date closingDate) {
 		this.closingDate = closingDate;
 	}
 
@@ -89,11 +89,11 @@ public class TransMaster {
 		this.subadmin_id = subadmin_id;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

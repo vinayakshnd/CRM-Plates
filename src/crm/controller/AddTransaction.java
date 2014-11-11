@@ -1,6 +1,8 @@
 package crm.controller;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +19,7 @@ import dao.TransactionDAO;
  */
 public class AddTransaction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-dd-MM");
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -42,9 +44,9 @@ public class AddTransaction extends HttpServlet {
 		TransactionDAO transactionDAO=new TransactionDAO();
 		TransSub trans=new TransSub();
 		int result;
-		
+		try {
 		transactionMaster.setTransaction_id(01);
-		transactionMaster.setDate(request.getParameter("dateFrom"));
+		transactionMaster.setDate(this.dateFormat.parse(request.getParameter("dateFrom")));
 		//transactionMaster.setClient_id(Integer.parseInt(request.getParameter("client_id")));
 		transactionMaster.setClient_id(Integer.parseInt(request.getParameter("client_id")));
 		transactionMaster.setSubadmin_id(12);		//Hardcoded needs to be changed
@@ -53,9 +55,7 @@ public class AddTransaction extends HttpServlet {
 		
 		transactionMaster.setRemaining_amount(transactionMaster.getTotal_amount()-transactionMaster.getAdvance());
 		transactionMaster.setIsOpen(1);
-		transactionMaster.setClosingDate(request.getParameter("dateTo"));
-		
-		
+		transactionMaster.setClosingDate(this.dateFormat.parse(request.getParameter("dateTo")));
 		
 		String provider_id[]=request.getParameterValues("provider_id");
 		String plate_id[]=request.getParameterValues("plate_id");
@@ -101,7 +101,10 @@ public class AddTransaction extends HttpServlet {
 			}
 		}
 		result=transactionDAO.addMasterTransaction(transactionMaster);
-		transactionMaster = transactionDAO.getOpenTransFor(20);
-		System.out.println("Fetched form db " + transactionMaster);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 }

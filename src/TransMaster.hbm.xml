@@ -13,8 +13,8 @@
       </id>
       <property name="subadmin_id" column="subadmin_id" type="int"/>
       <property name="client_id" column="client_id" type="int"/>
-      <property name="date" column="opening_date" type="string"/>
-      <property name="closingDate" column="closing_date" type="string"/>
+      <property name="date" column="opening_date" type="date"/>
+      <property name="closingDate" column="closing_date" type="date"/>
       <property name="advance" column="advance_amount " type="float"/>
       <property name="total_amount" column="total_amount" type="float"/>
       <property name="remaining_amount" column="remaining_amount" type="float"/>
